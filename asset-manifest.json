@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Smart_WeatherApp/static/css/main.cc32602b.css",
+    "main.js": "/Smart_WeatherApp/static/js/main.9b51255a.js",
+    "index.html": "/Smart_WeatherApp/index.html",
+    "main.cc32602b.css.map": "/Smart_WeatherApp/static/css/main.cc32602b.css.map",
+    "main.9b51255a.js.map": "/Smart_WeatherApp/static/js/main.9b51255a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cc32602b.css",
+    "static/js/main.9b51255a.js"
+  ]
+}
