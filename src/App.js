@@ -114,6 +114,19 @@ function App() {
     }
   }, [weatherData]);
 
+    const getWeatherInsights = useCallback(async () => {
+    try {
+      setTips("Generating weather insights...");
+      const input = `Given the current weather in ${weatherData.name} — temperature: ${Math.round(weatherData.main.temp)}°C, condition: ${weatherData.weather[0].main}, humidity: ${Math.round(weatherData.main.humidity)}%. Provide some weather-related insights.`;
+      const result = await model.generateContent(input);
+      const response = await result.response;
+      setTips(response.text());
+    } catch (error) {
+      console.error('Error generating tips:', error);
+      setTips("Unable to generate weather tips at this time.");
+    }
+  }, [weatherData, model]);
+
   useEffect(() => {
     if (weatherData.name) {
       getWeatherInsights();
