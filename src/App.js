@@ -118,7 +118,7 @@ function App() {
     if (weatherData.name) {
       getWeatherInsights();
     }
-  }, [weatherData]);
+  }, [weatherData, getWeatherInsights]);
 
   const getWeather = (event) => {
     if (event.key === "Enter") {
