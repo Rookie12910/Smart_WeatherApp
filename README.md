@@ -1,3 +1,6 @@
+# Visit site at :
+https://rookie12910.github.io/Smart_WeatherApp/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
