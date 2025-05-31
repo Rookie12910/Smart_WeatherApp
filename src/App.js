@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useCallback } from 'react';
 import './App.css';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import {
@@ -114,24 +114,20 @@ function App() {
     }
   }, [weatherData]);
 
-    const getWeatherInsights = useCallback(async () => {
-    try {
-      setTips("Generating weather insights...");
-      const input = `Given the current weather in ${weatherData.name} — temperature: ${Math.round(weatherData.main.temp)}°C, condition: ${weatherData.weather[0].main}, humidity: ${Math.round(weatherData.main.humidity)}%. Provide some weather-related insights.`;
-      const result = await model.generateContent(input);
-      const response = await result.response;
-      setTips(response.text());
-    } catch (error) {
-      console.error('Error generating tips:', error);
-      setTips("Unable to generate weather tips at this time.");
-    }
-  }, [weatherData, model]);
+  const getWeatherInsights = async (data) => {
+  try {
+    setTips("Generating weather insights...");
+    const input = `Given the current weather in ${data.name} — temperature: ${Math.round(data.main.temp)}°C, condition: ${data.weather[0].main}, humidity: ${Math.round(data.main.humidity)}%, and pressure: ${Math.round(data.main.pressure)} hPa — provide a weather forecast and practical tips in a concise 5-line summary.`;
+    const result = await model.generateContent(input);
+    console.log("Gemini api got called");
+    const response = await result.response;
+    setTips(response.text());
+  } catch (error) {
+    console.error('Error generating tips:', error);
+    setTips("Unable to generate weather tips at this time.");
+  }
+};
 
-  useEffect(() => {
-    if (weatherData.name) {
-      getWeatherInsights();
-    }
-  }, [weatherData, getWeatherInsights]);
 
   const getWeather = (event) => {
     if (event.key === "Enter") {
@@ -142,6 +138,9 @@ function App() {
           setWeatherData(data);
           setCity("");
           setIsLoading(false);
+          if (data.name) {
+            getWeatherInsights(data); 
+          }
         })
         .catch(error => {
           console.error('Error fetching weather data:', error);
@@ -151,19 +150,7 @@ function App() {
     }
   };
 
-  async function getWeatherInsights() {
-    try {
-      setTips("Generating weather insights...");
-      const input = `Given the current weather in ${weatherData.name} — temperature: ${Math.round(weatherData.main.temp)}°C, condition: ${weatherData.weather[0].main}, humidity: ${Math.round(weatherData.main.humidity)}%, and pressure: ${Math.round(weatherData.main.pressure)} hPa — provide a weather forecast and practical tips in a concise 5-line summary.`;
-      const result = await model.generateContent(input);
-      const response = await result.response;
-      setTips(response.text());
-    } catch (error) {
-      console.error('Error generating tips:', error);
-      setTips("Unable to generate weather tips at this time.");
-    }
-  }
-
+ 
   const getWeatherIcon = () => {
     if (!weatherData.weather) return defaultIcon;
     
