@@ -1,5 +1,8 @@
-# Visit site at :
+# You can visit the webapp at :
+
 https://rookie12910.github.io/Smart_WeatherApp/
+or,
+https://smart-weatherapp.onrender.com/
 
 # Getting Started with Create React App
 
