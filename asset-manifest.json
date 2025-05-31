@@ -1,13 +1,21 @@
 {
   "files": {
-    "main.css": "/Smart_WeatherApp/static/css/main.cc32602b.css",
-    "main.js": "/Smart_WeatherApp/static/js/main.9b51255a.js",
+    "main.css": "/Smart_WeatherApp/static/css/main.214815b5.css",
+    "main.js": "/Smart_WeatherApp/static/js/main.0a475e95.js",
+    "static/media/fa-solid-900.ttf": "/Smart_WeatherApp/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
+    "static/media/fa-brands-400.ttf": "/Smart_WeatherApp/static/media/fa-brands-400.1815e00441357e01619e.ttf",
+    "static/media/fa-solid-900.woff2": "/Smart_WeatherApp/static/media/fa-solid-900.2463b90d9a316e4e5294.woff2",
+    "static/media/fa-brands-400.woff2": "/Smart_WeatherApp/static/media/fa-brands-400.c210719e60948b211a12.woff2",
+    "static/media/fa-regular-400.ttf": "/Smart_WeatherApp/static/media/fa-regular-400.914997e1bdfc990d0897.ttf",
+    "static/media/fa-regular-400.woff2": "/Smart_WeatherApp/static/media/fa-regular-400.89999bdf5d835c012025.woff2",
+    "static/media/fa-v4compatibility.ttf": "/Smart_WeatherApp/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
+    "static/media/fa-v4compatibility.woff2": "/Smart_WeatherApp/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/Smart_WeatherApp/index.html",
-    "main.cc32602b.css.map": "/Smart_WeatherApp/static/css/main.cc32602b.css.map",
-    "main.9b51255a.js.map": "/Smart_WeatherApp/static/js/main.9b51255a.js.map"
+    "main.214815b5.css.map": "/Smart_WeatherApp/static/css/main.214815b5.css.map",
+    "main.0a475e95.js.map": "/Smart_WeatherApp/static/js/main.0a475e95.js.map"
   },
   "entrypoints": [
-    "static/css/main.cc32602b.css",
-    "static/js/main.9b51255a.js"
+    "static/css/main.214815b5.css",
+    "static/js/main.0a475e95.js"
   ]
 }
